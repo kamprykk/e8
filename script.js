@@ -3,7 +3,7 @@ const targetDate = new Date(2025, 4, 13); // 13 maja 2025
 
 // Inicjalizacja muzyki
 const backgroundMusic = document.getElementById('backgroundMusic');
-
+backgroundMusic.volume = 0.5; // 50% głośności
 // Obsługa autoodtwarzania po interakcji
 document.addEventListener('click', function() {
     backgroundMusic.play().catch(() => {});
@@ -18,7 +18,7 @@ function updateCountdown() {
         document.getElementById('countdown').textContent = "Czas start!";
         return;
     }
-
+    
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
