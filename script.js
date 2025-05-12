@@ -1,5 +1,14 @@
 // Ustaw datę egzaminu na 13 maja 2025 o 9:00
 const targetDate = new Date(2025, 4, 13, 9, 0, 0);
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+// Ustaw głośność muzyki
+backgroundMusic.volume = 0.5;
+
+// Obsługa odtwarzania po kliknięciu
+document.addEventListener('click', function() {
+    backgroundMusic.play().catch(() => {});
+}, { once: true });
 
 function updateCountdown() {
     const now = new Date();
@@ -16,7 +25,7 @@ function updateCountdown() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    // Dodaj dźwięk tyknięcia
+    // Dźwięk tyknięcia
     const tick = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU');
     tick.play().catch(() => {});
 
@@ -26,4 +35,4 @@ function updateCountdown() {
 
 // Aktualizuj co sekundę
 setInterval(updateCountdown, 1000);
-updateCountdown(); // Pierwsze wywołanie
+updateCountdown();
