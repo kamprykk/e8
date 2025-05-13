@@ -1,5 +1,5 @@
 // Ustaw datę egzaminu na 13 maja 2025 o 9:00
-const targetDate = new Date(2025, 4, 13, 9, 0, 0);
+const targetDate = new Date(2025, 4, 14, 9, 0, 0);
 const backgroundMusic = document.getElementById('backgroundMusic');
 
 // Ustaw głośność muzyki
